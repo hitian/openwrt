@@ -208,6 +208,23 @@ define Device/pbr-m1
 endef
 TARGET_DEVICES += pbr-m1
 
+define Device/pbr-m1-t
+  DTS := PBR-M1-T
+  IMAGE_SIZE := $(ralink_default_fw_size_32M)
+  DEVICE_TITLE := PBR-M1-T
+  DEVICE_PACKAGES := \
+	kmod-ata-core kmod-ata-ahci kmod-mt7603 kmod-mt76x2 kmod-sdhci-mt7620 \
+	kmod-usb3 kmod-usb-ledtrig-usbport wpad-mini \
+  luci luci-app-commands luci-app-hd-idle \
+  luci-app-statistics iptables-mod-tproxy \
+  bind-dig ifstat iftop iputils-ping kmod-fs-cifs \
+  kmod-fs-exfat kmod-fs-ext4 kmod-fs-ntfs usbutils hdparm \
+  luci-app-samba4 samba4-client samba4-admin samba4-libs samba4-server samba4-utils \
+  block-mount ca-bundle ca-certificates -dnsmasq dnsmasq-full \
+  wireless-tools htop file less usbutils
+endef
+TARGET_DEVICES += pbr-m1-t
+
 define Device/r6220
   DTS := R6220
   BLOCKSIZE := 128k
