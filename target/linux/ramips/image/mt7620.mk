@@ -453,6 +453,7 @@ TARGET_DEVICES += rt-n12p
 
 define Device/rt-n14u
   DTS := RT-N14U
+  IMAGE_SIZE := $(ralink_default_fw_size_16M)
   DEVICE_TITLE := Asus RT-N14u
 endef
 TARGET_DEVICES += rt-n14u
